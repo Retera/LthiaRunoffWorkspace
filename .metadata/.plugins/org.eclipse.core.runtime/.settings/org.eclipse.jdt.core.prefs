@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.compiler.problem.missingHashCodeMethod=error
+org.eclipse.jdt.core.compiler.problem.missingOverrideAnnotation=error
+org.eclipse.jdt.core.formatter.alignment_for_arguments_in_enum_constant=48
+org.eclipse.jdt.core.formatter.alignment_for_enum_constants=48
+org.eclipse.jdt.core.formatter.alignment_for_superinterfaces_in_enum_declaration=48
+org.eclipse.jdt.core.formatter.insert_space_after_closing_angle_bracket_in_type_arguments=insert
