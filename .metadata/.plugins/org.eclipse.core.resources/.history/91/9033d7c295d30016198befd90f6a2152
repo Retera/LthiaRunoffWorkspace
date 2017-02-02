@@ -1,0 +1,16 @@
+package edu.purdue.agriculture.thia;
+
+public final class LthiaUtils {
+	public static double computeQ(final double precipitation, final double minimumPrecipitation, final double S) {
+		double Q = 0;
+		if (precipitation > minimumPrecipitation && S != 0) {
+			Q = Math.pow((precipitation - (0.2 * S)), 2) / (precipitation + (0.8 * S));
+			return Q;
+		}
+		return Q;
+	}
+
+	private LthiaUtils() {
+
+	}
+}

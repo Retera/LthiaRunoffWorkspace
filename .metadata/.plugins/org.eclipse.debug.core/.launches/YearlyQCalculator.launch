@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/CligenToQJava/src/edu/purdue/agriculture/thia/YearlyQCalculator.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.purdue.agriculture.thia.YearlyQCalculator"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="../../CligenTXTInputs2017 ../../CligenTXTOutputs2017"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CligenToQJava"/>
+</launchConfiguration>

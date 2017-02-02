@@ -1,0 +1,36 @@
+package edu.purdue.agriculture.thia;
+
+import java.io.File;
+
+/**
+ * A class used to tell our code where to get input files from and where to save
+ * output files into. This is simply a storage class.
+ *
+ * @author Eric Theller : ect.software@gmail.com
+ *
+ */
+public final class Workspace {
+	private final String inputDirectory;
+	private final String outputDirectory;
+
+	public Workspace(final String inputDirectory, final String outputDirectory) {
+		this.inputDirectory = inputDirectory;
+		this.outputDirectory = outputDirectory;
+		final File inputDirFile = new File(inputDirectory);
+		final File outputDirFile = new File(outputDirectory);
+		if (!inputDirFile.exists()) {
+			inputDirFile.mkdirs();
+		}
+		if (!outputDirFile.exists()) {
+			outputDirFile.mkdirs();
+		}
+	}
+
+	public String getInputDirectory() {
+		return inputDirectory;
+	}
+
+	public String getOutputDirectory() {
+		return outputDirectory;
+	}
+}

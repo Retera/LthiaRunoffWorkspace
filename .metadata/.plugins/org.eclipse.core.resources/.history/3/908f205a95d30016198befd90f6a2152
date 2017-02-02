@@ -1,0 +1,68 @@
+package edu.purdue.agriculture.thia;
+
+import java.io.File;
+
+/**
+ * A class used to tell our code where to get input files from and where to save
+ * output files into.
+ *
+ * @author Eric Theller : ect.software@gmail.com
+ *
+ */
+public final class Workspace {
+	/**
+	 * Path to a folder of the input files, stored in a string
+	 */
+	private final String inputDirectory;
+	/**
+	 * Path to a folder of the output files, stored in a string
+	 */
+	private final String outputDirectory;
+
+	/**
+	 * Constructor to create a new workspace object
+	 * 
+	 * @param inputDirectory
+	 * @param outputDirectory
+	 */
+	public Workspace(final String inputDirectory, final String outputDirectory) {
+		this.inputDirectory = inputDirectory;
+		this.outputDirectory = outputDirectory;
+		final File inputDirFile = new File(inputDirectory);
+		final File outputDirFile = new File(outputDirectory);
+		if (!inputDirFile.exists()) {
+			inputDirFile.mkdirs();
+		}
+		if (!outputDirFile.exists()) {
+			outputDirFile.mkdirs();
+		}
+	}
+
+	/**
+	 * Returns the path to a file within the input directory, given a file name or relative path within that input directory
+	 * 
+	 * @param name The relative path to a file in the input directory
+	 * @return
+	 */
+	public String getInputFile(final String name) {
+		return inputDirectory + File.separatorChar + name;
+	}
+
+	/**
+	 * Returns the path to a file within the output directory, given a file name or relative path within that output directory
+	 * 
+	 * @param name The relative path to a file in the output directory
+	 * @return
+	 */
+	public String getOutputFile(final String name) {
+		return outputDirectory + File.separatorChar + name;
+	}
+
+	public String getInputDirectory() {
+		return inputDirectory;
+	}
+
+	public String getOutputDirectory() {
+		return outputDirectory;
+	}
+}

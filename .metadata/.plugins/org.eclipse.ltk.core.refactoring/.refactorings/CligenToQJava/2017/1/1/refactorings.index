@@ -1,0 +1,22 @@
+1483648892846	Extract local variable 'inputDirectory'
+1483648896961	Extract local variable 'outputDirectory'
+1483648999256	Rename method 'fileRead'
+1483649231551	Rename local variable 'obj'
+1483649535721	Move file
+1483649635094	Extract local variable 'name'
+1483649680943	Delete element
+1483649909638	Rename resource 'IN124715.TXT'
+1483649937374	Rename resource 'IN124715.TXT'
+1483649945642	Rename resource 'IN124715_From_Old_data.TXT'
+1483649950894	Rename resource 'IN124715New.TXT'
+1483649952253	Delete element
+1483651516875	Extract local variable 'd'
+1483651734850	Rename local variable 'raf'
+1483652875734	Extract local variable 'getQ'
+1483654130483	Rename type 'Calculations'
+1483654157027	Move compilation unit
+1483654178467	Rename package 'edu.purdue.engineering.thia'
+1483654318674	Rename type 'YearQCalculator'
+1483655007880	Rename local variable 'pMin'
+1483655011383	Rename local variable 'precp'
+1483655111676	Rename type 'Unit'

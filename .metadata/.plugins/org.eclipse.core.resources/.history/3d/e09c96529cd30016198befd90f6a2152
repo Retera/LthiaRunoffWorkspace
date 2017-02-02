@@ -1,0 +1,66 @@
+package edu.purdue.agriculture.thia;
+
+/**
+ * Utility class for LTHIA computations.
+ *
+ * @author Eric Theller : ect.software@gmail.com
+ *
+ */
+public final class LthiaUtils {
+	/**
+	 * Compute the Q value from the LTHIA equations. Q represents the runoff.
+	 *
+	 * @see https://engineering.purdue.edu/mapserve/LTHIA7/lthianew/documnt/scs.php
+	 *
+	 * @param precipitation
+	 * @param minimumPrecipitation
+	 * @param S
+	 * @return
+	 */
+	public static double computeQ(final double precipitation, final double minimumPrecipitation, final double S) {
+		double Q = 0;
+		if (precipitation > minimumPrecipitation && S != 0) {
+			Q = Math.pow((precipitation - (0.2 * S)), 2) / (precipitation + (0.8 * S));
+			return Q;
+		}
+		return Q;
+	}
+
+	/**
+	 * Compute the S value from the LTHIA equations. S represents potential
+	 * maximum retention after runoff begins.
+	 *
+	 * @see https://engineering.purdue.edu/mapserve/LTHIA7/lthianew/documnt/scs.php
+	 *
+	 * @param curveNumber
+	 *            The curve number for computations
+	 * @param units
+	 *            The units (inches or millimeters) used for computation
+	 * @return
+	 */
+	public static double computeS(final double curveNumber, final Units units) {
+		if (units == Units.INCHES) {
+			if (curveNumber == 0) {
+				return 0;
+			} else {
+				return (1000.0 / curveNumber) - 10.0;
+			}
+		} else if (units == Units.MILLIMETERS) {
+			if (curveNumber == 0) {
+				return 0;
+			} else {
+				return (25400.0 / curveNumber) - 254.0;
+			}
+		} else {
+			throw new RuntimeException("Invalid units specified to compute S value for LTHIA");
+		}
+	}
+
+	public static enum Units {
+		INCHES, MILLIMETERS;
+	}
+
+	private LthiaUtils() {
+
+	}
+}

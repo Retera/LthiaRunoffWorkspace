@@ -1,0 +1,36 @@
+package edu.purdue.agriculture.thia;
+
+public final class LthiaUtils {
+	public static double computeQ(final double precipitation, final double minimumPrecipitation, final double S) {
+		double Q = 0;
+		if (precipitation > minimumPrecipitation && S != 0) {
+			Q = Math.pow((precipitation - (0.2 * S)), 2) / (precipitation + (0.8 * S));
+			return Q;
+		}
+		return Q;
+	}
+	public static double computeS(int curveNumber) {
+		final double curveNumber = cnArray[itt];
+		if (curveNumber == 0) {
+			sArray[itt] = 0;
+		} else {
+			sArray[itt] = (25400 / curveNumber) - 254;
+		}
+		/* Calculating Pmin for Q > 0 for each value of S */
+		pMinArray[itt] = 0.2 * sArray[itt];
+		double Q = 0;
+		if (precipitation > minimumPrecipitation && S != 0) {
+			Q = Math.pow((precipitation - (0.2 * S)), 2) / (precipitation + (0.8 * S));
+			return Q;
+		}
+		return Q;
+	}
+	
+	public static enum Unit {
+		INCHES, MILLIMETERS;
+	}
+
+	private LthiaUtils() {
+
+	}
+}
